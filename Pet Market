@@ -1,0 +1,114 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Pet Market | Durex69", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Main Section"
+})
+
+Tab:AddButton({
+	Name = "Auto Click(Laggy)",
+	Callback = function()
+	local clik = 0.1
+	
+	while true do
+	game:GetService("ReplicatedStorage").Events.ClickPet:FireServer()
+	wait(clik)
+	end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Buy Basic Crate",
+	Callback = function()
+	local delay = 2
+	
+	while true do
+	local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.OpenCrate:FireServer(unpack(args))
+wait(delay)
+end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Upgrade Max Pets",
+	Callback = function()
+	local up = 5
+	
+	while true do
+	local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.Upgrade:FireServer(unpack(args))
+wait(up)
+end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Upgrade Luck",
+	Callback = function()
+	local upd = 5
+	
+	while true do
+	local args = {
+    [1] = 2
+}
+
+game:GetService("ReplicatedStorage").Events.Upgrade:FireServer(unpack(args))
+wait(upd)
+end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Upgrade Clicks Per Sec",
+	Callback = function()
+	local upr = 3
+	
+	while true do
+	local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.Upgrade:FireServer(unpack(args))
+wait(upr)
+end
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Auto Sell Pets",
+	Callback = function()
+	
+	local buto = 1
+	
+	while true do
+	local args = {
+    [1] = 6,
+    [2] = 24749381,
+    [3] = 1,
+    [4] = 24
+}
+
+game:GetService("ReplicatedStorage").Events.SellPet:FireServer(unpack(args))
+wait(buto)
+end
+      		print("button pressed")
+  	end    
+})
